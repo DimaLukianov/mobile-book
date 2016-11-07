@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { TabsPage } from '../pages/tabs/tabs';
+// import { TabsPage } from '../pages/tabs/tabs';
+import { ItemsPage } from '../pages/items/items';
 
 
 @Component({
@@ -11,15 +12,13 @@ import { TabsPage } from '../pages/tabs/tabs';
       <ion-header>
         <ion-toolbar>
           <ion-title>Pages</ion-title>
-          <ion-buttons end>
-            <button ion-button menuToggle>
-              <ion-icon name="close-circle"></ion-icon>
-            </button>
-          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
+          <button ion-item (click)="openPage(Items)">
+            Items
+          </button>
           <button ion-item (click)="openPage(loginPage)">
             Login
           </button>
@@ -34,7 +33,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   `
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = ItemsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
