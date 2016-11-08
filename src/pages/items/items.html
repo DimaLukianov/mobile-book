@@ -1,6 +1,6 @@
 <div class="items">
   <div class="item" *ngFor="let item of items">
-    <h3>{{item.title}}</h3>
+    <h3 (click)="showItem(item)">{{item.title}}</h3>
     <p>{{item.description}}</p>
   </div>
 </div>
