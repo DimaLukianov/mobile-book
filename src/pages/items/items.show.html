@@ -1,14 +1,32 @@
 
 <ion-header>
-  <ion-toolbar color="danger">
-    <ion-icon class="back-link" (click)="goBack()" name="arrow-dropleft-circle"></ion-icon>
+  <ion-toolbar color="light">
+    <button ion-button clear icon-only color="dark" (click)="goBack()">
+      <ion-icon  name="arrow-back"></ion-icon>
+    </button>
+
+    <ion-buttons end>
+      <button ion-button clear icon-only color="dark">
+        <ion-icon  name="heart-outline"></ion-icon>
+      </button>
+
+      <button ion-button icon-only color="dark" (click)="presentPopover($event)">
+        <ion-icon  name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="item-show">
+    <div class="title"  text-center>
+      {{item.title}}
+    </div>
 
-    {{item.title}}
-    {{item.description}}
-  </div>
+    <div class="hr"><hr /></div>
+
+    <div class="description" text-justify>
+      {{item.description}}
+    </div>
+</div>
 </ion-content>

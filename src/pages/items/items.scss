@@ -1,0 +1,20 @@
+.toolbar-custom {
+  background-color: color($colors, light);
+}
+
+.items-page {
+  background-color: color($colors, primary);
+}
+
+.item {
+  .item-title {
+    padding: 21px;
+    font-size: 2rem;
+    @extend %capitalized;
+  }
+  .item-source {
+    // color: $secondary;
+
+    @extend %capitalized;
+  }
+}

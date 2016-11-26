@@ -1,6 +1,33 @@
-<div class="items">
-  <div class="item" *ngFor="let item of items">
-    <h3 (click)="showItem(item)">{{item.title}}</h3>
-    <p>{{item.description}}</p>
-  </div>
-</div>
+<ion-header>
+  <ion-toolbar color="light">
+    <button ion-button menuToggle icon-only>
+     <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="items-page">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list class="items">
+    <ion-card class="item" *ngFor="let item of items">
+      <ion-card-header class="item-title" (click)="showItem(item)">
+        {{ item.title}}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+        <ion-col class="item-source" width-80>
+          The British use the term "header", but the American term "head-shot" the ...
+        </ion-col>
+        <ion-col class="card-actions" width-20 text-center>
+          <button ion-button clear icon-only color="dark">
+            <ion-icon  name="heart-outline"></ion-icon>
+          </button>
+        </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

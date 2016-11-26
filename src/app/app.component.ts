@@ -10,7 +10,7 @@ import { ItemsPage } from '../pages/items/items';
   template: `
     <ion-menu [content]="content">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="light">
           <ion-title>Pages</ion-title>
         </ion-toolbar>
       </ion-header>

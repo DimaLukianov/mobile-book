@@ -3,3 +3,25 @@
   color: #fff;
   margin-left: 10px;
 }
+
+.item-show {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.title {
+  @extend %capitalized;
+  padding: 1.5rem;
+  font-size: 2.5rem;
+  // font-weight: bold;
+}
+
+.hr {
+  padding: .5rem 1.5rem;
+}
+
+.description {
+  @extend %capitalized;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
