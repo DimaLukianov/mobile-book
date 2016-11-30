@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 // import { NotificationsService } from 'angular2-notifications';
+import { GlobalVars } from '../../app/global-vars';
 
 
 import { User } from './user';
 
 @Injectable()
 export class UserService {
-  private userUrl: string = '/api/auth/';
+  private userUrl: string;
   private headers: Headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(
+    public globalVars: GlobalVars,
     private http: Http
-  ) {}
+  ) {
+    this.userUrl = globalVars.getHostName() + '/api/sign_up/';
+  }
 
 
   createUser(user: User): void {

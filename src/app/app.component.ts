@@ -5,6 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 // import { TabsPage } from '../pages/tabs/tabs';
 import { ItemsPage } from '../pages/items/items';
 import { NavController } from 'ionic-angular';
+import { SignUpComponent } from '../pages/user/sign-up.component';
 
 
 @Component({
@@ -20,10 +21,10 @@ import { NavController } from 'ionic-angular';
           <button ion-item menuClose (click)="openItemsPage()">
             Items
           </button>
-          <button ion-item (click)="openPage(loginPage)">
+          <button ion-item menuClose (click)="openPage(loginPage)">
             Login
           </button>
-          <button ion-item (click)="openPage(signupPage)">
+          <button ion-item menuClose (click)="openSignUpPage()">
             Signup
           </button>
         </ion-list>
@@ -52,5 +53,9 @@ export class MyApp {
 
    openItemsPage() {
      this.nav.push(ItemsPage);
+   }
+
+   openSignUpPage() {
+     this.nav.push(SignUpComponent);
    }
 }

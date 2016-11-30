@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ItemsPage } from '../pages/items/items';
 import { ItemsShowPage } from '../pages/items/items.show';
+import { SignUpComponent } from '../pages/user/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ItemsShowPage } from '../pages/items/items.show';
     HomePage,
     TabsPage,
     ItemsPage,
-    ItemsShowPage
+    ItemsShowPage,
+    SignUpComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -30,7 +32,8 @@ import { ItemsShowPage } from '../pages/items/items.show';
     HomePage,
     TabsPage,
     ItemsPage,
-    ItemsShowPage
+    ItemsShowPage,
+    SignUpComponent
   ],
   providers: [GlobalVars]
 })
