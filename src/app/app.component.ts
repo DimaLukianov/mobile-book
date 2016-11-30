@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 // import { TabsPage } from '../pages/tabs/tabs';
 import { ItemsPage } from '../pages/items/items';
+import { NavController } from 'ionic-angular';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { ItemsPage } from '../pages/items/items';
       </ion-header>
       <ion-content>
         <ion-list>
-          <button ion-item (click)="openPage(Items)">
+          <button ion-item menuClose (click)="openItemsPage()">
             Items
           </button>
           <button ion-item (click)="openPage(loginPage)">
@@ -29,11 +30,12 @@ import { ItemsPage } from '../pages/items/items';
       </ion-content>
     </ion-menu>
 
-    <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+    <ion-nav id="nav" #myNav #content [root]="rootPage"></ion-nav>
   `
 })
 export class MyApp {
-  rootPage = ItemsPage;
+  @ViewChild('myNav') nav: NavController
+  public rootPage = ItemsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -43,4 +45,12 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+  ngOnInit() {
+      // Let's navigate from TabsPage to Page1
+      this.nav.push(ItemsPage);
+   }
+
+   openItemsPage() {
+     this.nav.push(ItemsPage);
+   }
 }
